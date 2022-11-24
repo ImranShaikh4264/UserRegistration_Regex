@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-// UC3-Method for validation of Email.
+// UC5-Method for validation of Password with rule -1.
 public class UserRegistrationRegex {
 
 	public static void firstName(String firstName) {
@@ -47,11 +47,21 @@ public class UserRegistrationRegex {
 			System.out.println(mobile + " : is a invalid Mobile Number ");
 		}
 	}
+		public static void password(String password) {
+			String regex = "[A-za-z0-9@_#$%!]{8,}";
+			Pattern p = Pattern.compile(regex);
+			Matcher match = p.matcher(password);
+			if (match.matches()) {
+				System.out.println(" Password is valid ");
+			} else {
+				System.out.println(" Password is invalid ");
+			}
+	}
 
 	public static void main(String[] args) {
 		System.out.println("Welcome in User registration program using Regex");
 		Scanner sc = new Scanner(System.in);
-		System.out.println("What do want enter \n1. First Name \n2. Last Name \n3. E-mail \n4. Mobile number");
+		System.out.println("What do want enter \n1. First Name \n2. Last Name \n3. E-mail \n4. Mobile number \n5. Password ");
 		int option = sc.nextInt();
 		switch(option) {
 		
@@ -75,6 +85,11 @@ public class UserRegistrationRegex {
 			System.out.println("Enter Mobile Number");
 			String mobile = sc.next();
 			mobileNumber(mobile);
+			break;
+		case 5:
+			System.out.println("Enter Password ");
+			String password = sc.next();
+			password(password);
 			break;
 		}
 	}
