@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-// UC7-Method for validation of Password with rule -3.
+// UC8-Method for validation of Password with rule -4.
 public class UserRegistrationRegex {
 
 	public static void firstName(String firstName) {
