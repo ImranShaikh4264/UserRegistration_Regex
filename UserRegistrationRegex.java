@@ -52,7 +52,7 @@ public class UserRegistrationRegex {
 	}
 
 	public static void password(String password) {
-		String regex = "(?=.*[A-Z])(?=.*[0-9])[A-za-z0-9@_#$%!]{8,}";
+		String regex = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$).{8,}";
 		Pattern p = Pattern.compile(regex);
 		Matcher match = p.matcher(password);
 		if (match.matches()) {
